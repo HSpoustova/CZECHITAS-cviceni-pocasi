@@ -92,60 +92,23 @@ const predpoved = {
   },
 };
 
+const currentId = window.location.hash.slice(1);
+const currentArticleData = predpoved[currentId];
+
 const mainElement = document.querySelector('main');
 
 mainElement.innerHTML += `
-<div class="article-card">
-    <h2>${predpoved.pondeli.den}</h2>
-    <p>${predpoved.pondeli.denni_teplota}</p>
-    <p>${predpoved.pondeli.stav_pocasi}</p>
-    <a href="detail.html#pondeli">Přečíst celý článek</a>
-  </div>`;
+<article>
+    <h2>Den: ${currentArticleData.den}</h2>
+    <p>Datum: ${currentArticleData.datum}</p>
+    <p>Denní teplota: ${currentArticleData.denni_teplota}</p>
+    <p>Ranní teplota:${currentArticleData.ranni_teplota}</p>
+    <p>Odpolední teplota:${currentArticleData.odpoledni_teplota}</p>
+    <p>Večerní teplota: ${currentArticleData.vecerni_teplota}</p>
+    <p>Stav počasí:${currentArticleData.stav_pocasi}</p>
+    <p>Tlak: ${currentArticleData.tlak}</p>
+    <p>Rychlost větru: ${currentArticleData.rychlost_vetru}</p>
+    <p>${currentArticleData.popis_pocasi}</p>
+    
 
-mainElement.innerHTML += `
-  <div class="article-card">
-      <h2>${predpoved.utery.den}</h2>
-      <p>${predpoved.utery.denni_teplota}</p>
-      <p>${predpoved.utery.stav_pocasi}</p>
-      <a href="detail.html#utery">Přečíst celý článek</a>
-    </div>`;
-
-mainElement.innerHTML += `
-    <div class="article-card">
-        <h2>${predpoved.streda.den}</h2>
-        <p>${predpoved.streda.denni_teplota}</p>
-        <p>${predpoved.streda.stav_pocasi}</p>
-        <a href="detail.html#streda">Přečíst celý článek</a>
-      </div>`;
-
-mainElement.innerHTML += `
-  <div class="article-card">
-      <h2>${predpoved.ctvrtek.den}</h2>
-      <p>${predpoved.ctvrtek.denni_teplota}</p>
-      <p>${predpoved.ctvrtek.stav_pocasi}</p>
-      <a href="detail.html#ctvrtek">Přečíst celý článek</a>
-    </div>`;
-
-mainElement.innerHTML += `
-  <div class="article-card">
-      <h2>${predpoved.patek.den}</h2>
-      <p>${predpoved.patek.denni_teplota}</p>
-      <p>${predpoved.patek.stav_pocasi}</p>
-      <a href="detail.html#patek">Přečíst celý článek</a>
-    </div>`;
-
-mainElement.innerHTML += `
-  <div class="article-card">
-      <h2>${predpoved.sobota.den}</h2>
-      <p>${predpoved.sobota.denni_teplota}</p>
-      <p>${predpoved.sobota.stav_pocasi}</p>
-      <a href="detail.html#sobota">Přečíst celý článek</a>
-    </div>`;
-
-mainElement.innerHTML += `
-  <div class="article-card">
-      <h2>${predpoved.nedele.den}</h2>
-      <p>${predpoved.nedele.denni_teplota}</p>
-      <p>${predpoved.nedele.stav_pocasi}</p>
-      <a href="detail.html#nedele">Přečíst celý článek</a>
-    </div>`;
+  </article>`;
